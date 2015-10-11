@@ -1,0 +1,7 @@
+source("readData.R")
+png(filename = "plot3.png",width = 480,height = 480,units = "px")
+plot(dateTime,mainData$Sub_metering_1,type = "line",xlab="",ylab = "Energy sub metering")
+lines(dateTime,mainData$Sub_metering_2,type = "line",col ="red")
+lines(dateTime,mainData$Sub_metering_3,type = "line",col ="blue")
+legend('topright',colnames(mainData)[7:ncol(mainData)],lty=1,col=c('black','red','blue'))
+dev.off()
